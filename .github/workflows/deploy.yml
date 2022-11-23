@@ -49,8 +49,8 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: >
-          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
           echo "Creating resources"
+          
           az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file ${{ env.GITHUB_WORKSPACE }}/Azure/main.bicep --debug
 
   build:
